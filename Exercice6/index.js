@@ -9,10 +9,6 @@ function clearDisplay() {
 }
 
 function calculateResult() {
-    display.value = eval(display.value);
-}
-
-function calculateResult() {
     try {
         if (display.value.includes('/0')) {
             throw new Error('Division by zero is not allowed');
