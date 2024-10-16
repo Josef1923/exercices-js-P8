@@ -1,22 +1,22 @@
 function convertToBinary() {
-    const valeur = document.getElementById('decimalInput').value;
+    const value = document.getElementById('decimalInput').value;
 
-    const nombreConverti = Number(valeur);
+    const convertedNumber = Number(value);
 
-    if (Number.isNaN(nombreConverti) || !Number.isInteger(nombreConverti) || nombreConverti < 0) {
+    if (Number.isNaN(convertedNumber) || !Number.isInteger(convertedNumber) || convertedNumber < 0) {
         document.getElementById("binaryResult").innerText = "";
         return;
     }
 
     let binaryResult = "";
-    let valeurRestante = nombreConverti;
+    let remainingValue = convertedNumber;
 
 
-    while (valeurRestante > 0) {
-        const remainder = valeurRestante % 2;
+    do {
+        const remainder = remainingValue % 2;
         binaryResult = remainder + binaryResult;
-        valeurRestante = Math.floor(valeurRestante / 2);
-    }
+        remainingValue = Math.floor(remainingValue / 2);
+    } while (remainingValue > 0);
 
-    document.getElementById('binaryResult').innerText = binaryResult || "0";
+    document.getElementById('binaryResult').innerText = binaryResult;
 }
